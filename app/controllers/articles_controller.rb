@@ -19,6 +19,11 @@ class ArticlesController < ApplicationController
       flash.now[:error] = '保存失敗!!'
       render :new
     end
+
+    def edit
+      @article = Article.find(params[:id])
+    end
+
   end
 
   private
