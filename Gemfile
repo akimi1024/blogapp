@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'faker'
 gem 'hamlit'
 gem "net-http"
+gem 'annotate'
 
 
 # Use Active Storage variant
