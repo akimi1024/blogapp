@@ -25,6 +25,10 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :favorite_articles, through: :likes, source: :article
+
+  has_many :following_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
+  has_many :followings, through: :following_relationships, source: :following
+
   has_one :profile, dependent: :destroy
 
   delegate :birthday, :age, :gender, to: :profile, allow_nil: true
@@ -51,6 +55,10 @@ class User < ApplicationRecord
 
   def prepare_profile
     profile || build_profile
+  end
+
+  def follow!(user)
+    following_relationships.create!(following_id: user.id)
   end
 
   def avatar_image
