@@ -44,10 +44,6 @@ class User < ApplicationRecord
     likes.exists?(article_id: article.id)
   end
 
-  def display_name
-    profile&.nickname ||self.email.split('@').first
-  end
-
   def birthday
     profile&.birthday
   end
@@ -73,14 +69,6 @@ class User < ApplicationRecord
 
   def has_followed?(user)
     following_relationships.exists?(following_id: user.id)
-  end
-
-  def avatar_image
-    if profile&.avatar&.attached?
-      profile.avatar
-    else
-      'default-avatar.png'
-    end
   end
 
   private
