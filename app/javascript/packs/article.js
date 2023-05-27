@@ -12,7 +12,7 @@ const handleHeartDisplay = (hasLiked) => {
   }
 }
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded:load', () => {
   const dataset = $('#article-show').data()
   const articleId = dataset.articleId
   axios.get(`/articles/${articleId}/like`)
