@@ -162,6 +162,14 @@ GEM
     jmespath (1.6.2)
     json (2.6.3)
     jsonapi-renderer (0.2.2)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
+    letter_opener_web (1.4.1)
+      actionmailer (>= 3.2)
+      letter_opener (~> 1.0)
+      railties (>= 3.2)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -363,6 +371,8 @@ DEPENDENCIES
   hamlit
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
+  letter_opener
+  letter_opener_web (~> 1.0)
   listen (~> 3.2)
   net-http
   pg (>= 0.18, < 2.0)
