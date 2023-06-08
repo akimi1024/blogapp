@@ -30,6 +30,7 @@ gem 'faker'
 gem 'hamlit'
 gem 'net-http'
 gem 'aws-sdk-s3', require: false
+gem 'sidekiq'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
