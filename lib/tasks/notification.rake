@@ -1,0 +1,7 @@
+namespace :notification do
+  desc '利用者にメールを送付する'
+
+  task send_emails_form_admin: :environment do
+    puts '初めてのRaceTask'
+  end
+end
