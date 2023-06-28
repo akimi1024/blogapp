@@ -19,7 +19,7 @@ RSpec.describe 'Articles', type: :request do
 
       it '記事が保存される' do
         article_params = attributes_for(:article)
-        post articles_path ({ article: article_params })
+        post articles_path({ article: article_params })
         expect(response).to have_http_status(302)
         expect(Article.last.title).to eq(article_params[:title])
         expect(Article.last.content.body.to_plain_text).to eq(article_params[:content])
